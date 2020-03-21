@@ -11,13 +11,33 @@
 ### 安装
 
 ```
+// 建议使用npm或yarn包形式引入以保证插件的更新迭代
 npm i @hyoga/uni-socket.io --save
 // yarn add @hyoga/uni-socket.io
 ```
 
 ### 使用
 
-与[socket.io-client](https://github.com/socketio/socket.io-client)完全相同，参考其写法即可。
+```
+import io from '@hyoga/uni-socket.io';
+// import io from '/yourpath/uni-socket.io'; //直接引入文件方式
+
+io('your websocket path', {
+  query: {},
+  transports: [ 'websocket', 'polling' ],
+  timeout: 5000,
+});
+
+socket.on('connect', () => {
+  console.log('ws 已连接);
+});
+
+socket.on('error', (msg: any) => {
+  console.log('ws error', msg);
+});
+```
+
+更多使用方法，请参考[socket.io-client](https://github.com/socketio/socket.io-client)写法即可。
 
 ### API
 
