@@ -42,3 +42,24 @@ socket.on('error', (msg: any) => {
 ### API
 
 参考[官网API](https://socket.io/docs/client-api/)
+
+### 常见问题
+
+1. 为什么没有聊天室示例代码？  
+
+    本项目仅仅是将socket.io封装到uni-app使用，并非完整的聊天室。
+
+2. Exception: ReferenceError: Can't find variable: window  
+
+    hbuilder x 2.6.3版本中v3编译有bug，升级hbuilder x即可。
+
+3. 真机运行TypeError: undefined is not an object (evaluating 'document.createElement')？  
+    示例代码中：
+    ```
+    io('your websocket path', {
+      query: {},
+      transports: [ 'websocket', 'polling' ],
+      timeout: 5000,
+    });
+    ```
+    不要漏写`transports: [ 'websocket', 'polling' ]`，如果没有指定协议，貌似socket.io会默认走`JSONP Polling`请求，导致报错。
