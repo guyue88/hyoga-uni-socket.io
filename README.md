@@ -4,6 +4,8 @@
 
 最近需要在uni-app中用到socket.io，遇到bug没有人修复很是头疼，所以基于weapp.socket.io新起一个项目。
 
+如果该项目对您有帮助，可以给作者一个[star](https://github.com/AspenLuoQiang/hyoga-uni-socket.io)。
+
 ### 介绍
 
 重写socket.io-client的engin.io-client处理件，h5依旧使用原生WebSocket，APP与小程序使用uni-app的WebSocket协议，所以h5端任然可以支持长轮询等方式，APP与小程序只能支持WebSocket协议。
@@ -54,7 +56,8 @@ socket.on('error', (msg: any) => {
     hbuilder x 2.6.3版本中v3编译有bug，升级hbuilder x即可。
 
 3. 真机运行TypeError: undefined is not an object (evaluating 'document.createElement')？  
-    示例代码中：
+    示例代码中：  
+
     ```
     io('your websocket path', {
       query: {},
