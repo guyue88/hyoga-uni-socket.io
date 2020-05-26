@@ -24,7 +24,7 @@ npm i @hyoga/uni-socket.io --save
 import io from '@hyoga/uni-socket.io';
 // import io from '/yourpath/uni-socket.io'; //直接引入文件方式
 
-io('your websocket path', {
+const socket = io('your websocket path', {
   query: {},
   transports: [ 'websocket', 'polling' ],
   timeout: 5000,
@@ -59,7 +59,7 @@ socket.on('error', (msg: any) => {
     示例代码中：  
 
     ```
-    io('your websocket path', {
+    const socket = io('your websocket path', {
       query: {},
       transports: [ 'websocket', 'polling' ],
       timeout: 5000,
