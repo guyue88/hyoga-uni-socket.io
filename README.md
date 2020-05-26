@@ -66,3 +66,9 @@ socket.on('error', (msg: any) => {
     });
     ```
     不要漏写`transports: [ 'websocket', 'polling' ]`，如果没有指定协议，貌似socket.io会默认走`JSONP Polling`请求，导致报错。
+
+### 加群
+
+如果以上没有解决您的问题，可以在[github issue](https://github.com/AspenLuoQiang/hyoga-uni-socket.io/issues)上提交问题，并附上问题详细介绍以及相关代码和截图。或者加QQ群 207879913 与大家一起讨论。或者您对websocket或者IM感兴趣也可以加群讨论！！
+
+<img src="https://cdn2.waikuaiba.cn/uploads/20200526/ef46f4aacc5776dafcf70985edc515f4.jpeg" >
