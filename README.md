@@ -8,6 +8,8 @@
 
 ### 介绍
 
+Socket.io官方套件已升级至3.x，本插件内置socket.io已同步升级至3.x，使用2.x版本的@hyoga/uni-socket请确保服务端使用3.x的socket.io。
+
 重写socket.io-client的engin.io-client处理件，h5依旧使用原生WebSocket，APP与小程序使用uni-app的WebSocket协议，所以h5端任然可以支持长轮询等方式，APP与小程序只能支持WebSocket协议。
 
 ### 安装
