@@ -1,16 +1,14 @@
 ## @hyoga/uni-socket
 
-项目源自：[weapp.socket.io](https://github.com/10cella/weapp.socket.io)，该项目作者已经两年没有维护，出现bug无法修复。
+项目源自：[weapp.socket.io](https://github.com/10cella/weapp.socket.io)，该项目作者已经两年没有维护，出现 bug 无法修复。
 
-最近需要在uni-app中用到socket.io，遇到bug没有人修复很是头疼，所以基于weapp.socket.io新起一个项目。
-
-如果该项目对您有帮助，可以给作者一个[star](https://github.com/AspenLuoQiang/hyoga-uni-socket.io)。
+最近需要在 uni-app 中用到 socket.io，遇到 bug 没有人修复很是头疼，所以基于 weapp.socket.io 新起一个项目，已支持 Socket.io 3.x。
 
 ### 介绍
 
-Socket.io官方套件已升级至3.x，本插件内置socket.io已同步升级至3.x，使用2.x版本的@hyoga/uni-socket请确保服务端使用3.x的socket.io。
+Socket.io 官方套件已升级至 3.x，本插件内置 socket.io 已同步升级至 3.x，使用 2.x 版本的@hyoga/uni-socket 请确保服务端使用 3.x 的 socket.io。
 
-重写socket.io-client的engin.io-client处理件，h5依旧使用原生WebSocket，APP与小程序使用uni-app的WebSocket协议，所以h5端任然可以支持长轮询等方式，APP与小程序只能支持WebSocket协议。
+重写 socket.io-client 的 engin.io-client 处理件，h5 依旧使用原生 WebSocket，APP 与小程序使用 uni-app 的 WebSocket 协议，所以 h5 端任然可以支持长轮询等方式，APP 与小程序只能支持 WebSocket 协议。
 
 ### 安装
 
@@ -56,32 +54,39 @@ socket.on('error', (msg: any) => {
 
 ### API
 
-参考[官网API](https://socket.io/docs/client-api/)
+参考[官网 API](https://socket.io/docs/client-api/)
 
 ### 常见问题
 
-1. 为什么没有聊天室示例代码？  
+1. 为什么没有聊天室示例代码？
 
-    本项目仅仅是将socket.io封装到uni-app使用，并非完整的聊天室。
+   本项目仅仅是将 socket.io 封装到 uni-app 使用，并非完整的聊天室。
 
-2. Exception: ReferenceError: Can't find variable: window  
+2. Exception: ReferenceError: Can't find variable: window
 
-    hbuilder x 2.6.3版本中v3编译有bug，升级hbuilder x即可。
+   hbuilder x 2.6.3 版本中 v3 编译有 bug，升级 hbuilder x 即可。
 
-3. 真机运行TypeError: undefined is not an object (evaluating 'document.createElement')？  
-    示例代码中：  
+3. 真机运行 TypeError: undefined is not an object (evaluating 'document.createElement')？  
+   示例代码中：
 
-    ```
-    const socket = io('your websocket path', {
-      query: {},
-      transports: [ 'websocket', 'polling' ],
-      timeout: 5000,
-    });
-    ```
-    不要漏写`transports: [ 'websocket', 'polling' ]`，如果没有指定协议，貌似socket.io会默认走`JSONP Polling`请求，导致报错。
+   ```
+   const socket = io('your websocket path', {
+     query: {},
+     transports: [ 'websocket', 'polling' ],
+     timeout: 5000,
+   });
+   ```
 
-### 加群
+   不要漏写`transports: [ 'websocket', 'polling' ]`，如果没有指定协议，貌似 socket.io 会默认走`JSONP Polling`请求，导致报错。
 
-如果以上没有解决您的问题，可以在[github issue](https://github.com/AspenLuoQiang/hyoga-uni-socket.io/issues)上提交问题，并附上问题详细介绍以及相关代码和截图。或者加QQ群 207879913 与大家一起讨论。或者您对websocket或者IM感兴趣也可以加群讨论！！
+4. 无法连接服务端？
+   如果是真机调试，请确保设备与服务端在同一个局域网内，此外注意，Socket.io 以及升级到 3.x，请注意版本匹配。Socket.io 3.x 请使用 @hyoga/uni-socket 2.x，Socket.io 2.x 请使用 uni-socket 1.x。
 
-<img src="https://cdn2.waikuaiba.cn/uploads/20200526/ef46f4aacc5776dafcf70985edc515f4.jpeg" >
+## 联系作者
+
+如果该项目对您有帮助，可以给作者一个[star](https://github.com/AspenLuoQiang/hyoga-uni-socket.io)。
+
+- [qq 群](https://jq.qq.com/?_wv=1027&k=9f25XGCW)
+- 公众号，欢迎关注，不定时更新
+
+![前端方程式](https://i.loli.net/2020/05/28/CNcjhm17d9zfvkQ.jpg)
