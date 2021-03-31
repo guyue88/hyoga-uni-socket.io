@@ -1,13 +1,5 @@
 ## @hyoga/uni-socket
 
-项目源自：[weapp.socket.io](https://github.com/10cella/weapp.socket.io)，该项目作者已经两年没有维护，出现 bug 无法修复。
-
-最近需要在 uni-app 中用到 socket.io，遇到 bug 没有人修复很是头疼，所以基于 weapp.socket.io 新起一个项目，已支持 Socket.io 3.x。
-
-### 介绍
-
-Socket.io 官方套件已升级至 3.x，本插件内置 socket.io 已同步升级至 3.x，使用 2.x 版本的@hyoga/uni-socket 请确保服务端使用 3.x 的 socket.io。
-
 重写 socket.io-client 的 engin.io-client 处理件，h5 依旧使用原生 WebSocket，APP 与小程序使用 uni-app 的 WebSocket 协议，所以 h5 端任然可以支持长轮询等方式，APP 与小程序只能支持 WebSocket 协议。
 
 ### 安装
@@ -17,6 +9,16 @@ Socket.io 官方套件已升级至 3.x，本插件内置 socket.io 已同步升�
 npm i @hyoga/uni-socket.io --save
 // yarn add @hyoga/uni-socket.io
 ```
+
+#### 版本选择
+
+使用本插件，请注意插件版本与服务端 socket.io **版本要匹配**，否则将会出现无法连接服务器的问题。
+
+| uni-socket 版本 | 服务端 socket.io 版本 |
+| --------------- | --------------------- |
+| 1.x             | 2.x                   |
+| 2.x             | 3.x                   |
+| 3.x             | 4.x                   |
 
 ### 使用
 
@@ -55,6 +57,10 @@ socket.on('error', (msg: any) => {
 ### API
 
 参考[官网 API](https://socket.io/docs/client-api/)
+
+### 谁在使用 @hyoga/uni-socket
+
+- [kitim](https://gitee.com/kitim/kitim-react-native)，基于 react-native 实现的在线聊天 APP，功能较为齐全，可以二次开发。
 
 ### 常见问题
 
