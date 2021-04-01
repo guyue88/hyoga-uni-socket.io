@@ -1,8 +1,8 @@
-const path = require('path')
-const webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
 
 function resolve(dir) {
-  return path.join(__dirname, '..', dir)
+  return path.join(__dirname, '..', dir);
 }
 
 module.exports = {
@@ -14,14 +14,8 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
-    new webpack.NormalModuleReplacementPlugin(
-      /debug/,
-      path.resolve(__dirname, './lib/support/debug.js')
-    ),
-    new webpack.NormalModuleReplacementPlugin(
-      /^engine.io-client$/,
-      path.resolve(__dirname, '/lib/engine.io-client')
-    ),
+    new webpack.NormalModuleReplacementPlugin(/debug/, path.resolve(__dirname, './lib/support/debug.js')),
+    new webpack.NormalModuleReplacementPlugin(/^engine.io-client$/, path.resolve(__dirname, './lib/engine.io-client')),
   ],
   module: {
     rules: [
@@ -33,4 +27,4 @@ module.exports = {
     ],
   },
   mode: 'development',
-}
+};
