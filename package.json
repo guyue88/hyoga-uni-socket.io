@@ -1,6 +1,6 @@
 {
   "name": "@hyoga/uni-socket.io",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "适用于uni-app的socket.io封装，可用于uni-app、微信小程序",
   "keywords": [
     "mp-weixin",
