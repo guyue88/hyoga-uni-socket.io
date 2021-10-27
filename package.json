@@ -15,8 +15,8 @@
   ],
   "main": "./dist/uni-socket.io.js",
   "scripts": {
-    "prepublish": "rm -rf ./dist && npm run build",
-    "build-dev": "webpack --config webpack.config.dev.js",
+    "prepublishOnly": "rm -rf ./dist && npm run build",
+    "build-dev": "webpack --config webpack.config.dev.js --watch",
     "build": "webpack --config webpack.config.js"
   },
   "dependencies": {},
