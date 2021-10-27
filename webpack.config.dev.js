@@ -20,7 +20,7 @@ module.exports = {
     ),
     new webpack.NormalModuleReplacementPlugin(
       /^engine.io-client$/,
-      path.resolve(__dirname, '/lib/engine.io-client')
+      path.resolve(__dirname, './lib/engine.io-client')
     ),
   ],
   module: {
