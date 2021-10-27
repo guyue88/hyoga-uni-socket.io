@@ -1,4 +1,4 @@
-## @hyoga/uni-socket
+## @hyoga/uni-socket.io
 
 重写 socket.io-client 的 engin.io-client 处理件，h5 依旧使用原生 WebSocket，APP 与小程序使用 uni-app 的 WebSocket 协议，所以 h5 端任然可以支持长轮询等方式，APP 与小程序只能支持 WebSocket 协议。
 
@@ -88,11 +88,60 @@ socket.on('error', (msg: any) => {
 4. 无法连接服务端？
    如果是真机调试，请确保设备与服务端在同一个局域网内，此外注意，Socket.io 以及升级到 3.x，请注意版本匹配。Socket.io 3.x 请使用 @hyoga/uni-socket 2.x，Socket.io 2.x 请使用 uni-socket 1.x。
 
+5. 报错：Converting circular stricture to JSON
+  错误的意思是，无法序列化一个循环引用的对象，大概率出现原因是，尝试使用JSON.stringify()去序列化`socket`对象。另外使用vue的`mixin`功能并将socket对象挂载到mixin的`data`上，vue内部可能会自动去序列化这个`mixin`的`data`从而导致出错。
+  以下是mixin的错误示例，请勿使用这种方式初始化socket.io：
+  ```
+  // page.vue
+  <script>
+    import {socketioMixin} from "../../mixins/socketio";
+    export default {
+      data() {
+        return { }
+      },
+      mixins: [socketioMixin],
+    }
+  </script>
+  ```
+  ```
+  // socket mixin
+  import io from '@hyoga/uni-socket.io';
+  export const socketioMixin = {
+    data() {
+      return {
+        socket: null,
+      }
+    },
+    created() {
+      this.init()
+    },
+    methods: {
+      init() {
+        const option = {
+          query: {io : this.uuid},
+          transports: ['websocket', 'polling'],
+          timeout: 5000,
+        }
+        this.socket = io(SOCKET_API, option);	  
+      },
+    },
+  }
+  ```
+
 ## 联系作者
 
-如果该项目对您有帮助，可以给作者一个[star](https://github.com/AspenLuoQiang/hyoga-uni-socket.io)。
+如果你对该项目由任何问题，可以通过以下方式联系作者。
+
 
 - [qq 群](https://jq.qq.com/?_wv=1027&k=9f25XGCW)
 - 公众号，欢迎关注，不定时更新
 
-![前端方程式](https://i.loli.net/2020/05/28/CNcjhm17d9zfvkQ.jpg)
+<img src="./github/mp.png" title="前端方程式" style="height:150px;" />
+
+## 捐赠 @hyoga/uni-socket.io 的开发
+
+@hyoga/uni-socket.io 的文档和代码完全开源，如果该项目有帮助到你的开发工作，你可以捐赠@hyoga/uni-socket.io的研发工作，捐赠无门槛，哪怕是一杯可乐也好。
+<div style="display:flex; align-items: center;">
+  <img src="./github/wechat.png" title="微信赞赏" style="height:350px;" />
+  <img src="./github/alipay.png" title="支付宝赞赏" style="height:350px;margin-left: 50px;" />
+</div>
