@@ -1,5 +1,13 @@
 ## @hyoga/uni-socket.io
 
+[![NPM version][npm-image]][npm-url]
+[![npm download][download-image]][download-url]
+
+[npm-image]: https://img.shields.io/npm/v/@hyoga/uni-socket.io.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/@hyoga/uni-socket.io
+[download-image]: https://img.shields.io/npm/dm/@hyoga/uni-socket.io.svg?style=flat-square
+[download-url]: https://www.npmjs.com/package/@hyoga/uni-socket.io
+
 重写 socket.io-client 的 engin.io-client 处理件，h5 依旧使用原生 WebSocket，APP 与小程序使用 uni-app 的 WebSocket 协议，所以 h5 端任然可以支持长轮询等方式，APP 与小程序只能支持 WebSocket 协议。
 
 ### 安装
