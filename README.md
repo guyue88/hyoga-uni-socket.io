@@ -135,21 +135,19 @@ socket.on('error', (msg: any) => {
     },
   }
   ```
-
 ## 联系作者
 
 如果你对该项目由任何问题，可以通过以下方式联系作者。
 
-
 - [qq 群](https://jq.qq.com/?_wv=1027&k=9f25XGCW)
 - 公众号，欢迎关注，不定时更新
 
-<img src="./github/mp.png" title="前端方程式" style="height:150px;" />
+<img src="https://img.qiuzhihu.cn/mp/%E5%85%AC%E4%BC%97%E5%8F%B7.png" title="前端方程式" style="height:150px;" />
 
 ## 捐赠 @hyoga/uni-socket.io 的开发
 
 @hyoga/uni-socket.io 的文档和代码完全开源，如果该项目有帮助到你的开发工作，你可以捐赠@hyoga/uni-socket.io的研发工作，捐赠无门槛，哪怕是一杯可乐也好。
 <div style="display:flex; align-items: center;">
-  <img src="./github/wechat.png" title="微信赞赏" style="height:350px;" />
-  <img src="./github/alipay.png" title="支付宝赞赏" style="height:350px;margin-left: 50px;" />
+  <img src="https://img.qiuzhihu.cn/mp/%E5%BE%AE%E4%BF%A1%E8%B5%9E%E8%B5%8F.png" title="微信赞赏" style="height:350px;" />
+  <img src="https://img.qiuzhihu.cn/mp/%E6%94%AF%E4%BB%98%E5%AE%9D.png" title="支付宝赞赏" style="height:350px;margin-left: 50px;" />
 </div>
