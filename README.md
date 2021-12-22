@@ -97,7 +97,10 @@ socket.on('error', (msg: any) => {
    如果是真机调试，请确保设备与服务端在同一个局域网内，此外注意，Socket.io 以及升级到 3.x，请注意版本匹配。Socket.io 3.x 请使用 @hyoga/uni-socket 2.x，Socket.io 2.x 请使用 uni-socket 1.x。
 
 5. 报错：Converting circular stricture to JSON
-  错误的意思是，无法序列化一个循环引用的对象，大概率出现原因是，尝试使用JSON.stringify()去序列化`socket`对象。另外使用vue的`mixin`功能并将socket对象挂载到mixin的`data`上，vue内部可能会自动去序列化这个`mixin`的`data`从而导致出错。
+  错误的意思是，无法序列化一个循环引用的对象，大概率出现原因是，尝试使用JSON.stringify()去序列化`socket`对象。
+  使用vue的`mixin`功能并将socket对象挂载到mixin的`data`上，vue内部可能会自动去序列化这个`mixin`的`data`从而导致出错。
+  使用vuex直接挂载socket对象同样会导致该问题，请勿将socket对象挂载到vuex中。
+
   以下是mixin的错误示例，请勿使用这种方式初始化socket.io：
   ```
   // page.vue
