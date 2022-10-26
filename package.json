@@ -14,6 +14,7 @@
     "dist/"
   ],
   "main": "./dist/uni-socket.io.js",
+  "types": "./types/index.d.ts",
   "scripts": {
     "prepublishOnly": "rm -rf ./dist && npm run build",
     "build-dev": "webpack --config webpack.config.dev.js --watch",
