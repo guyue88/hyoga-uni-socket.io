@@ -20,10 +20,11 @@
     "build-dev": "webpack --config webpack.config.dev.js --watch",
     "build": "webpack --config webpack.config.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "socket.io-client": "^4.0.0"
+  },
   "devDependencies": {
     "component-inherit": "^0.0.3",
-    "socket.io-client": "^4.0.0",
     "babel-core": "^6.24.1",
     "babel-eslint": "4.1.7",
     "babel-loader": "7.0.0",
