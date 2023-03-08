@@ -62,13 +62,17 @@ socket.on('error', (msg: any) => {
 
 更多使用方法，请参考[socket.io-client](https://github.com/socketio/socket.io-client)写法即可。
 
+### 实例参考
+
+- [speedy-im](https://github.com/guyue88/speedy-im/blob/master/client/socket/chat.ts)，项目包含前后端，使用uni-app开发。
+
 ### API
 
 参考[官网 API](https://socket.io/docs/client-api/)
 
 ### 谁在使用 @hyoga/uni-socket
 
-- [kitim](https://gitee.com/kitim/kitim-react-native)，基于 react-native 实现的在线聊天 APP，功能较为齐全，可以二次开发。
+- [speedy-im](https://github.com/guyue88/speedy-im)，基于 uni-app 实现的在线聊天 APP，功能较为齐全，可以二次开发。
 
 ### 常见问题
 
@@ -138,6 +142,11 @@ socket.on('error', (msg: any) => {
     },
   }
   ```
+### 排错与调试
+
+一般常见的问题都在上方列出，另外注意，如果使用java/python等实现的socket.io服务端，要注意查看一下内部实际的socket.io版本，版本对应上一般来说，都能连上。  
+如果仍然无法连接，可以在控制台，看看网络中WS是否正常建立，同时监听 `connect_error` 或者`error`事件，根据错误信息进行排查。实在排查不出，在找作者咨询，由于作者平时事情较多，不接受未经任何排查的免费咨询！
+
 ## 联系作者
 
 如果你对该项目由任何问题，可以通过以下方式联系作者。
