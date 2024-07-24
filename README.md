@@ -62,17 +62,9 @@ socket.on('error', (msg: any) => {
 
 更多使用方法，请参考[socket.io-client](https://github.com/socketio/socket.io-client)写法即可。
 
-### 实例参考
-
-- [speedy-im](https://github.com/guyue88/speedy-im/blob/master/client/socket/chat.ts)，项目包含前后端，使用uni-app开发。
-
 ### API
 
 参考[官网 API](https://socket.io/docs/client-api/)
-
-### 谁在使用 @hyoga/uni-socket，联系作者添加链接
-
-- [speedy-im](https://github.com/guyue88/speedy-im)，基于 uni-app 实现的在线聊天 APP，功能较为齐全，可以二次开发。
 
 ### 常见问题
 
